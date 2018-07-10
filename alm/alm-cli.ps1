@@ -1,43 +1,31 @@
 # Replace this url with the url to the site where you want to install the SPFx solution
 $url = "https://terentiev.sharepoint.com/sites/demo"
-# Solution name
-$appId = "alm-app-customizer-client-side-solution"
 
-#check if PnP PowerShell is installed 
-$modules = Get-Module -Name SharePointPnPPowerShellOnline -ListAvailable
-if ($modules -eq $null) {
-    # Not installed.
-    Install-Module -Name SharePointPnPPowerShellOnline -Scope CurrentUser -Force
-    Import-Module -Name SharePointPnPPowerShellOnline -DisableNameChecking
-}
-
-# Connect to SharePoint Online site
+# # Connect to SharePoint Online site
 Write-Host "Connecting to SharePoint Online..." -ForegroundColor Cyan
-Connect-PnPOnline -Url $url
+o365 spo connect $url
 
 # Add the SPFx solution to the Tenant App Catalog
 Write-Host "Adding the package to the Tenant App Catalog..." -ForegroundColor Cyan
-Add-PnPApp -Path "./alm-app-customizer.sppkg" -Scope Tenant
+$appId = o365 spo app add --filePath ./alm-app-customizer.sppkg
 Pause
 
 # Publish the solution to make it visible for the users
 Write-Host "Publishing the solution..." -ForegroundColor Cyan
-Publish-PnPApp -Identity $appId -Scope Tenant
+o365 spo app deploy --id $appId
 Pause
 
 # Install the solution (app) to the site
 Write-Host "Installing the solution to the site..." -ForegroundColor Cyan
-Install-PnPApp -Identity $appId -Scope Tenant -Wait
+o365 spo app install --id $appId --siteUrl $url
 Pause
 
 # Uninstall the solution (app) from the site
 Write-Host "Uninstalling the solution from the site..." -ForegroundColor Cyan
-Uninstall-PnPApp -Identity $appId -Scope Tenant
+o365 spo app uninstall --id $appId --siteUrl $url
 Pause
 
 # Removing the solution from Tenant App Catalog
 Write-Host "Removing the solution from the Tenant App Catalog..." -ForegroundColor Cyan
-Remove-PnPApp -Identity $appId -Scope Tenant
+o365 spo app remove --id $appId
 Pause
-
-
