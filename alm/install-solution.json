@@ -1,0 +1,11 @@
+{
+    "$schema": "schema.json",
+        "actions": [
+            {
+                "verb": "installSolution",
+                "id": "add8ec13-a136-4f0e-9d6a-6cc0a265fe4d"
+            }
+        ],
+            "bindata": { },
+    "version": 1
+}
