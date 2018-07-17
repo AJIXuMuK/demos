@@ -2,6 +2,7 @@
 This demo shows how to use PnP PowerShell, Office 365 CLI and SiteScripts/SiteDesigns to install SPFx solution to the site.
 
 ### Content
+|Item|Description|
 |---|---|
 |`alm-app-customizer` folder|sample SPFx solution with Application Customizer extension|
 |`alm-app-customizer.sppkg`|built package of the sample SPFx solution|
