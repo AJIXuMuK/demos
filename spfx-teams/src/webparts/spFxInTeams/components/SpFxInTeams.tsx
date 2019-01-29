@@ -7,18 +7,10 @@ export default class SpFxInTeams extends React.Component<ISpFxInTeamsProps, {}> 
   public render(): React.ReactElement<ISpFxInTeamsProps> {
     return (
       <div className={ styles.spFxInTeams }>
-        <div className={ styles.container }>
-          <div className={ styles.row }>
-            <div className={ styles.column }>
-              <span className={ styles.title }>Welcome to SharePoint!</span>
-              <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
-              <p className={ styles.description }>{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={ styles.button }>
-                <span className={ styles.label }>Learn more</span>
-              </a>
-            </div>
-          </div>
-        </div>
+        <div className={styles.description}>this.props.description</div>
+        {this.props.documents && this.props.documents.map(doc => {
+          return <div><a href={doc.webUrl} target="_blank">{doc.name}</a></div>;
+        })}
       </div>
     );
   }

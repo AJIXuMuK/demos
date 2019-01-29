@@ -17,11 +17,44 @@ export interface ISpFxInTeamsWebPartProps {
 
 export default class SpFxInTeamsWebPart extends BaseClientSideWebPart<ISpFxInTeamsWebPartProps> {
 
+  // teams context
+  private _teamsContext: microsoftTeams.Context;
+  // channel docs
+  private _channelDocuments: any[];
+
+  protected onInit(): Promise<any> {
+    let retVal: Promise<any> = Promise.resolve();
+    // check if we're in Teams context
+    if (this.context.microsoftTeams) {
+      // creating a promise to be returned
+      retVal = new Promise((resolve, reject) => {
+        // getting Teams context
+        this.context.microsoftTeams.getContext(context => {
+          this._teamsContext = context;
+          // creating MS Graph client
+          this.context.msGraphClientFactory.getClient().then(client => {
+            // requesting channel documents using Team's context properties: groupId, channelName
+            client
+              .api(`/groups/${this._teamsContext.groupId}/drive/root:/${this._teamsContext.channelName}:/children`)
+              .version('v1.0')
+              .get().then(response => {
+                const docs = response.value as any[];
+                this._channelDocuments = docs;
+                resolve();
+              });
+          });
+        });
+      });
+    }
+    return retVal;
+  }
+
   public render(): void {
     const element: React.ReactElement<ISpFxInTeamsProps > = React.createElement(
       SpFxInTeams,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        documents: this._channelDocuments
       }
     );
 
