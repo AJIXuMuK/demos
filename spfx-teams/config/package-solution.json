@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-teams-client-side-solution",
     "id": "c76394f6-00f6-4f4f-8cc0-26ba85da6e7f",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

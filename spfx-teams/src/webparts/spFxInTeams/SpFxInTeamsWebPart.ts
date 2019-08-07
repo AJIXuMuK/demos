@@ -3,13 +3,16 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
+} from '@microsoft/sp-webpart-base';
+import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
-} from '@microsoft/sp-webpart-base';
+} from '@microsoft/sp-property-pane';
 
 import * as strings from 'SpFxInTeamsWebPartStrings';
 import SpFxInTeams from './components/SpFxInTeams';
 import { ISpFxInTeamsProps } from './components/ISpFxInTeamsProps';
+import * as microsoftTeams from '@microsoft/teams-js';
 
 export interface ISpFxInTeamsWebPartProps {
   description: string;
