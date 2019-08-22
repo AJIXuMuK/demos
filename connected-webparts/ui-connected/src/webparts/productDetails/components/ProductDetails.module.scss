@@ -1,0 +1,33 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+$borderColor: "[theme: neutralLight, default: #eaeaea]";
+
+.productDetails {
+  .noItem {
+    text-align: center;
+  }
+
+  .product {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .prop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid;
+      border-bottom-color: $borderColor;
+
+      .title {
+        flex-grow: 0;
+        font-weight: 700;
+        width: 30%;
+      }
+
+      .value {
+        flex-grow: 1;
+      }
+    }
+  }
+}
