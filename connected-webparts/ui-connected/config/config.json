@@ -17,11 +17,20 @@
           "manifest": "./src/webparts/productDetails/ProductDetailsWebPart.manifest.json"
         }
       ]
+    },
+    "image-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/image/ImageWebPart.js",
+          "manifest": "./src/webparts/image/ImageWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "ProductWebPartStrings": "lib/webparts/product/loc/{locale}.js",
-    "ProductDetailsWebPartStrings": "lib/webparts/productDetails/loc/{locale}.js"
+    "ProductDetailsWebPartStrings": "lib/webparts/productDetails/loc/{locale}.js",
+    "ImageWebPartStrings": "lib/webparts/image/loc/{locale}.js"
   }
 }
