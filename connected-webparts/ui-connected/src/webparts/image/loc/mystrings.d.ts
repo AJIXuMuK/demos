@@ -1,7 +1,8 @@
 declare interface IImageWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  UrlFieldLabel: string;
+  TitleFieldLabel: string;
 }
 
 declare module 'ImageWebPartStrings' {

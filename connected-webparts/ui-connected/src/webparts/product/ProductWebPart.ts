@@ -12,7 +12,7 @@ import Product from './components/Product';
 import { IProductProps } from './components/IProductProps';
 import { IProduct } from '../../common/model/IProduct';
 
-import { IDynamicDataPropertyDefinition, IDynamicDataCallables } from '@microsoft/sp-dynamic-data';
+import { IDynamicDataPropertyDefinition, IDynamicDataCallables, IDynamicDataAnnotatedPropertyValue } from '@microsoft/sp-dynamic-data';
 
 export interface IProductWebPartProps {
   description: string;
@@ -83,6 +83,27 @@ export default class ProductWebPart extends BaseClientSideWebPart<IProductWebPar
     }
 
     throw new Error('bad propertyId');
+  }
+
+  public getAnnotatedPropertyValue(propertyId: string): IDynamicDataAnnotatedPropertyValue | undefined {
+    if (propertyId === 'product') {
+      return {
+        sampleValue: {
+          id: 1,
+          name: 'Product',
+          price: 100,
+          amount: 10,
+          imageUrl: 'https://contoso.sharepoint.com/sites/site/assets/image.png'
+        },
+        metadata: {
+          'id': { title: 'Id' },
+          'name': { title: 'Product Name' },
+          'price': { title: 'Product Price' },
+          'amount': { title: 'Product Amount' },
+          'imageUrl': { title: 'Image Url' }
+        }
+      };
+    }
   }
 
   private _onProductSelected(product: IProduct) {

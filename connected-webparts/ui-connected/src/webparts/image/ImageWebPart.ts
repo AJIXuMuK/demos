@@ -18,6 +18,7 @@ import { DynamicDataSharedDepth } from '@microsoft/sp-property-pane';
 
 export interface IImageWebPartProps {
   imageUrl: DynamicProperty<string>;
+  imageTitle: DynamicProperty<string>;
 }
 
 export default class ImageWebPart extends BaseClientSideWebPart<IImageWebPartProps> {
@@ -26,7 +27,8 @@ export default class ImageWebPart extends BaseClientSideWebPart<IImageWebPartPro
     const element: React.ReactElement<IImageProps> = React.createElement(
       Image,
       {
-        imageUrl: this.properties.imageUrl.tryGetValue()
+        imageUrl: this.properties.imageUrl.tryGetValue(),
+        imageTitle: this.properties.imageTitle.tryGetValue()
       }
     );
 
@@ -45,6 +47,9 @@ export default class ImageWebPart extends BaseClientSideWebPart<IImageWebPartPro
     return {
       'imageUrl': {
         dynamicPropertyType: 'string'
+      },
+      'imageTitle': {
+        dynamicPropertyType: 'string'
       }
     };
   }
@@ -62,34 +67,39 @@ export default class ImageWebPart extends BaseClientSideWebPart<IImageWebPartPro
               primaryGroup: {
                 groupName: strings.BasicGroupName,
                 groupFields: [
+                  PropertyPaneTextField('imageTitle', {
+                    label: strings.TitleFieldLabel
+                  }),
                   PropertyPaneTextField('imageUrl', {
-                    label: strings.DescriptionFieldLabel
+                    label: strings.UrlFieldLabel
                   })
                 ]
               },
               secondaryGroup: {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                // defining field set to be able to select a source
-                PropertyPaneDynamicFieldSet({
-                  label: 'Select product source',
-                  fields: [
-                    // we have the only field to store product value
-                    PropertyPaneDynamicField('imageUrl', {
-                      label: strings.DescriptionFieldLabel
-                    })
-                  ],
-                  sharedConfiguration: {
-                    depth: DynamicDataSharedDepth.Property // we're interested in single property from the source
-                  }
-                })
-              ]
-            },
-            showSecondaryGroup: !!this.properties.imageUrl.tryGetSource()
-          }
+                groupName: strings.BasicGroupName,
+                groupFields: [
+                  // defining field set to be able to select a source
+                  PropertyPaneDynamicFieldSet({
+                    label: 'Select image source',
+                    fields: [
+                      PropertyPaneDynamicField('imageTitle', {
+                        label: strings.TitleFieldLabel
+                      }),
+                      PropertyPaneDynamicField('imageUrl', {
+                        label: strings.UrlFieldLabel
+                      })
+                    ],
+                    sharedConfiguration: {
+                      depth: DynamicDataSharedDepth.Property
+                    }
+                  })
+                ]
+              },
+              showSecondaryGroup: !!this.properties.imageUrl.tryGetSource()
+            }
+          ]
+        }
       ]
-    }
-      ]
-  };
-}
+    };
+  }
 }

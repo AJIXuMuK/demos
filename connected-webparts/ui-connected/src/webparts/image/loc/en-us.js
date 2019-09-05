@@ -2,6 +2,7 @@ define([], function() {
   return {
     "PropertyPaneDescription": "Image Settings",
     "BasicGroupName": "Data Sourse",
-    "DescriptionFieldLabel": "Image Url"
+    "UrlFieldLabel": "Image Url",
+    "TitleFieldLabel": "Image Label"
   }
 });
