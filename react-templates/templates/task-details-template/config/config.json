@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "task-details-library": {
+      "components": [
+        {
+          "entrypoint": "./lib/libraries/taskDetails/TaskDetailsLibrary.js",
+          "manifest": "./src/libraries/taskDetails/TaskDetailsLibrary.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TaskDetailsLibraryStrings": "lib/libraries/taskDetails/loc/{locale}.js"
+  }
+}

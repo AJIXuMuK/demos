@@ -1,0 +1,25 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+$borderColor: "[theme: neutralLight, default: #eaeaea]";
+
+.taskDetails {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .prop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 0;
+    border-bottom: 1px solid;
+    border-bottom-color: $borderColor;
+
+    .title {
+      font-weight: 300;
+    }
+
+    .value {
+      font-weight: 700;
+    }
+  }
+}

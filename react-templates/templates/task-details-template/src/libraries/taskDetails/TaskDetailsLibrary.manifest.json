@@ -1,0 +1,9 @@
+{
+  "id": "b4f1e2f7-5639-4b47-b7d2-fe6b6f7810d8",
+  "alias": "TaskDetailsLibrary",
+  "componentType": "Library",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2
+}
