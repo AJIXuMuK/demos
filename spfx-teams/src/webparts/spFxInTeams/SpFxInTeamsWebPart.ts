@@ -26,7 +26,6 @@ export default class SpFxInTeamsWebPart extends BaseClientSideWebPart<ISpFxInTea
   private _channelDocuments: any[];
 
   protected async onInit(): Promise<any> {
-    let retVal: Promise<any> = Promise.resolve();
     // check if we're in Teams context
     if (this.context.sdks.microsoftTeams) {
       // getting teams context
@@ -53,7 +52,6 @@ export default class SpFxInTeamsWebPart extends BaseClientSideWebPart<ISpFxInTea
       const docs = response.value as any[];
       this._channelDocuments = docs;
     }
-    return retVal;
   }
 
   public render(): void {
