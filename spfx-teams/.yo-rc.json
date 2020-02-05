@@ -3,7 +3,7 @@
     "plusBeta": true,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.8.2",
+    "version": "1.10.0",
     "libraryName": "spfx-teams",
     "libraryId": "c76394f6-00f6-4f4f-8cc0-26ba85da6e7f",
     "packageManager": "npm",

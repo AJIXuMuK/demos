@@ -25,35 +25,39 @@ export default class SpFxInTeamsWebPart extends BaseClientSideWebPart<ISpFxInTea
   // channel docs
   private _channelDocuments: any[];
 
-  protected onInit(): Promise<any> {
+  protected async onInit(): Promise<any> {
     let retVal: Promise<any> = Promise.resolve();
     // check if we're in Teams context
-    if (this.context.microsoftTeams) {
-      // creating a promise to be returned
-      retVal = new Promise((resolve, reject) => {
-        // getting Teams context
-        this.context.microsoftTeams.getContext(context => {
-          this._teamsContext = context;
-          // creating MS Graph client
-          this.context.msGraphClientFactory.getClient().then(client => {
-            // requesting channel documents using Team's context properties: groupId, channelName
-            client
-              .api(`/groups/${this._teamsContext.groupId}/drive/root:/${this._teamsContext.channelName}:/children`)
-              .version('v1.0')
-              .get().then(response => {
-                const docs = response.value as any[];
-                this._channelDocuments = docs;
-                resolve();
-              });
-          });
-        });
-      });
+    if (this.context.sdks.microsoftTeams) {
+      // getting teams context
+      this._teamsContext = this.context.sdks.microsoftTeams.context;
+      // creating MS Graph client
+      const client = await this.context.msGraphClientFactory.getClient();
+
+      let response: any;
+
+      if (this._teamsContext.groupId) {
+      // requesting channel documents using Team's context properties: groupId, channelName
+      response = await client
+        .api(`/groups/${this._teamsContext.groupId}/drive/root:/${this._teamsContext.channelName}:/children`)
+        .version('v1.0')
+        .get();
+      }
+      else {
+        // requesting documents from user's OneDrive
+        response = await client
+          .api(`/me/drive/root/children`)
+          .version('v1.0')
+          .get();
+      }
+      const docs = response.value as any[];
+      this._channelDocuments = docs;
     }
     return retVal;
   }
 
   public render(): void {
-    const element: React.ReactElement<ISpFxInTeamsProps > = React.createElement(
+    const element: React.ReactElement<ISpFxInTeamsProps> = React.createElement(
       SpFxInTeams,
       {
         description: this.properties.description,
