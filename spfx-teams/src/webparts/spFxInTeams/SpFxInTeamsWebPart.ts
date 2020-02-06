@@ -37,8 +37,9 @@ export default class SpFxInTeamsWebPart extends BaseClientSideWebPart<ISpFxInTea
 
       if (this._teamsContext.groupId) {
       // requesting channel documents using Team's context properties: groupId, channelName
+      const channelFolder = this._teamsContext.channelRelativeUrl.replace(`${this.context.pageContext.web.serverRelativeUrl}/Shared Documents`, '');
       response = await client
-        .api(`/groups/${this._teamsContext.groupId}/drive/root:/${this._teamsContext.channelName}:/children`)
+        .api(`/groups/${this._teamsContext.groupId}/drive/root:/${channelFolder}:/children`)
         .version('v1.0')
         .get();
       }
