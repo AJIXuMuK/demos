@@ -27,6 +27,13 @@ Demo how to create Carousel web part using [PnP React Controls](https://pnp.gith
   - [PropertyFieldListPicker](https://pnp.github.io/sp-dev-fx-property-controls/controls/PropertyFieldListPicker/)
   - [PropertyFieldSitePicker](https://pnp.github.io/sp-dev-fx-property-controls/controls/PropertyFieldSitePicker/)
 
+## Document Library Structure
+Document library should have next fields, in addition to OOTB ones, to correctly use this example:
+
+| Field | Type |
+| ----- | ---- |
+| Description | Multiple lines of text |
+| Url | Hyperlink |
 
 ## Disclaimer
 
