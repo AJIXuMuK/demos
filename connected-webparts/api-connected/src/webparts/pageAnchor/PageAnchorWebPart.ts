@@ -2,10 +2,9 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  BaseClientSideWebPart
 } from '@microsoft/sp-webpart-base';
+import { PropertyPaneTextField, IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 
 import PageAnchor from './components/PageAnchor';
 import { IPageAnchorProps } from './components/IPageAnchorProps';

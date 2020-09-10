@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "f271d24f-1439-4b08-b933-737bc2aab31d",
+  "id": "7b30473e-6565-4cda-a8dc-d79541edc80a",
   "alias": "PageNavigationWebPart",
   "componentType": "WebPart",
 

@@ -3,12 +3,15 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
+  IWebPartPropertiesMetadata
+} from '@microsoft/sp-webpart-base';
+
+import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneDynamicFieldSet,
-  PropertyPaneDynamicField,
-  IWebPartPropertiesMetadata
-} from '@microsoft/sp-webpart-base';
+  PropertyPaneDynamicField
+} from '@microsoft/sp-property-pane';
 
 import * as strings from 'ImageWebPartStrings';
 import Image from './components/Image';
@@ -90,7 +93,7 @@ export default class ImageWebPart extends BaseClientSideWebPart<IImageWebPartPro
                       })
                     ],
                     sharedConfiguration: {
-                      depth: DynamicDataSharedDepth.Property
+                      depth: DynamicDataSharedDepth.None
                     }
                   })
                 ]
