@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.9",
+  "packageName": "TeamsMeetingAppWebPart",
+  "id": "81c04b48-914b-45ae-a7e3-ec564060ae82",
+  "version": "1.0.0",
+  "developer": {
+    "name": "Alex Terentiev",
+    "websiteUrl": "https://blog.aterentiev.com",
+    "privacyUrl": "https://blog.aterentiev.com",
+    "termsOfUseUrl": "https://blog.aterentiev.com",
+    "mpnId": ""
+  },
+  "name": {
+    "short": "Teams Meeting App"
+  },
+  "description": {
+    "short": "Teams Meeting App description",
+    "full": "Teams Meeting App description"
+  },
+  "icons": {
+    "outline": "2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e_outline.png",
+    "color": "2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e_color.png"
+  },
+  "accentColor": "#000000",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e%26forceLocale={locale}",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team",
+        "groupchat"
+      ],
+      "context": [
+        "channelTab",
+        "privateChatTab",
+        "meetingChatTab",
+        "meetingDetailsTab",
+        "meetingSidePanel",
+        "meetingStage"
+      ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "1ade41af-20ea-4d59-a343-3484e8d6a611",
+      "name": "Navigator",
+      "contentUrl": "https://{teamSiteDomain}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest=/_layouts/15/teamshostedapp.aspx%3Fteams%26personal%26componentId=2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e%26forceLocale={locale}",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "validDomains": [
+    "*.login.microsoftonline.com",
+    "*.sharepoint.com",
+    "*.sharepoint-df.com",
+    "spoppe-a.akamaihd.net",
+    "spoprod-a.akamaihd.net",
+    "resourceseng.blob.core.windows.net",
+    "msft.spoppe.com"
+  ],
+  "webApplicationInfo": {
+    "resource": "https://{teamSiteDomain}",
+    "id": "00000003-0000-0ff1-ce00-000000000000"
+  }
+}

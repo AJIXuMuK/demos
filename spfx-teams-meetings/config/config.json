@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "teams-meeting-app-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/teamsMeetingApp/TeamsMeetingAppWebPart.js",
+          "manifest": "./src/webparts/teamsMeetingApp/TeamsMeetingAppWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TeamsMeetingAppWebPartStrings": "lib/webparts/teamsMeetingApp/loc/{locale}.js"
+  }
+}
