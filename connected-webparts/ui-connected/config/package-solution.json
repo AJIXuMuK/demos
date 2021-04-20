@@ -1,14 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "ui-connected-wp-client-side-solution",
-    "id": "5b9fd73b-98ba-4acd-951e-b28f7e9c5244",
+    "name": "ui-connected-wp-demo-client-side-solution",
+    "id": "b43ce154-c1b9-4a10-bf2c-40f19cb0a973",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false
   },
   "paths": {
-    "zippedPackage": "solution/ui-connected-wp.sppkg"
+    "zippedPackage": "solution/ui-connected-wp-demo.sppkg"
   }
 }

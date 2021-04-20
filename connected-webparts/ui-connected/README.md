@@ -1,4 +1,4 @@
-## ui-connected-wp
+## ui-connected-wp-demo
 
 This is where you include your WebPart documentation.
 
