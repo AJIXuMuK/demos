@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.12.1-rc.1",
+    "version": "1.12.1-rc.3",
     "libraryName": "spfx-teams-meetings",
     "libraryId": "7ba40db4-edf0-47ad-b9ef-9b9714d4681d",
     "packageManager": "npm",

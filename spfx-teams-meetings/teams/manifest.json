@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
   "manifestVersion": "1.9",
   "packageName": "TeamsMeetingAppWebPart",
-  "id": "81c04b48-914b-45ae-a7e3-ec564060ae82",
+  "id": "7ba40db4-edf0-47ad-b9ef-9b9714d4681d",
   "version": "1.0.0",
   "developer": {
     "name": "Alex Terentiev",
@@ -19,13 +19,13 @@
     "full": "Teams Meeting App description"
   },
   "icons": {
-    "outline": "2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e_outline.png",
-    "color": "2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e_color.png"
+    "outline": "20ccdc10-0273-45ae-a4a0-821e2647cae5_outline.png",
+    "color": "20ccdc10-0273-45ae-a4a0-821e2647cae5_color.png"
   },
   "accentColor": "#000000",
   "configurableTabs": [
     {
-      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e%26forceLocale={locale}",
+      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=20ccdc10-0273-45ae-a4a0-821e2647cae5%26forceLocale={locale}",
       "canUpdateConfiguration": true,
       "scopes": [
         "team",
@@ -45,7 +45,7 @@
     {
       "entityId": "1ade41af-20ea-4d59-a343-3484e8d6a611",
       "name": "Navigator",
-      "contentUrl": "https://{teamSiteDomain}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest=/_layouts/15/teamshostedapp.aspx%3Fteams%26personal%26componentId=2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e%26forceLocale={locale}",
+      "contentUrl": "https://{teamSiteDomain}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest=/_layouts/15/teamshostedapp.aspx%3Fteams%26personal%26componentId=20ccdc10-0273-45ae-a4a0-821e2647cae5%26forceLocale={locale}",
       "scopes": [
         "personal"
       ]

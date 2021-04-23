@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "2b0f3e13-fb93-40e5-b7ab-c11ae4e4d37e",
+  "id": "20ccdc10-0273-45ae-a4a0-821e2647cae5",
   "alias": "TeamsMeetingAppWebPart",
   "componentType": "WebPart",
 

@@ -90,7 +90,6 @@ export default class TeamsMeetingApp extends React.Component<ITeamsMeetingAppPro
 
     const teamsContext = teamsSdk.context;
     const properties: IProperty[] = [];
-    console.log(teamsContext);
 
     //
     // we could use tabType from state here, but for clarity purposes will use context properties
@@ -177,7 +176,7 @@ export default class TeamsMeetingApp extends React.Component<ITeamsMeetingAppPro
 
     const graphClient = await graphClientFactory.getClient();
     const teamsContext = teamsSdk.context;
-    console.log(teamsSdk.teamsJs);
+    console.log(this.state);
 
     const additionalInfo: IProperty[] = [];
 
