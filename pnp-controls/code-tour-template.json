@@ -158,7 +158,7 @@
     },
     {
       "file": "src/webparts/pnPCarouselDemoWebPart/components/PnPCarouselDemoWebPart.tsx",
-      "description": "Now, let's modify `render` method to diplay `WebPartTitle` and `Placeholder` if the web part has not been configured.\n\n```typescript\nconst {\n  siteUrl,\n  listId,\n  title,\n  displayMode,\n  onConfigure,\n  updateTitle\n} = this.props;\n\nreturn (\n  <div className={ pnPCarouselDemoWebPart }>\n    <WebPartTitle displayMode={displayMode} title={title} updateProperty={updateTitle} />\n    {(!siteUrl || !listId) && <Placeholder\n    iconName='Edit'\n    iconText='Configure your web part'\n    description='Please, enter site url and list id'\n    buttonLabel='Configure'\n    onConfigure={onConfigure} />}\n  </div>\n);\n```",
+      "description": "Now, let's modify `render` method to diplay `WebPartTitle` and `Placeholder` if the web part has not been configured.\n\n```typescript\nconst {\n  siteUrl,\n  listId,\n  title,\n  displayMode,\n  onConfigure,\n  updateTitle\n} = this.props;\n\nreturn (\n  <div className={ styles.pnPCarouselDemoWebPart }>\n    <WebPartTitle displayMode={displayMode} title={title} updateProperty={updateTitle} />\n    {(!siteUrl || !listId) && <Placeholder\n    iconName='Edit'\n    iconText='Configure your web part'\n    description='Please, enter site url and list id'\n    buttonLabel='Configure'\n    onConfigure={onConfigure} />}\n  </div>\n);\n```",
       "line": 58,
       "selection": {
         "start": {
