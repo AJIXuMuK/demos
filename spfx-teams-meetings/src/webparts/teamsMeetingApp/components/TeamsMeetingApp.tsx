@@ -186,7 +186,7 @@ export default class TeamsMeetingApp extends React.Component<ITeamsMeetingAppPro
       case 'personal':
         break;
       case 'meeting':
-        const onlineMeetingId = atob(teamsContext.meetingId).replace('0#', '').replace('#0', '');
+        //const onlineMeetingId = atob(teamsContext.meetingId).replace('0#', '').replace('#0', '');
         //const meetingInfo = await graphClient.api(`/me/onlineMeetings/${onlineMeetingId}`).version('v1.0').get();
         const chatMessageInfo = await graphClient.api(`/chats/${teamsContext.chatId}/messages?$top=1`).version('v1.0').get();
 

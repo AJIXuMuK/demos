@@ -1,0 +1,57 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Teams App Manifest",
+  "steps": [
+    {
+      "file": "teams/manifest.json",
+      "description": "Icons files from `teams` folder.",
+      "line": 23
+    },
+    {
+      "file": "teams/manifest.json",
+      "description": "`configurationUrl` for the tab has specific format - it redirects to the `TeamsLogon.aspx` page with parameters to request needed tokens and render page with the web part.",
+      "line": 28
+    },
+    {
+      "file": "teams/manifest.json",
+      "description": "The most important parameter is `componentId` that contains id of the web part.",
+      "line": 28,
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 191
+        },
+        "end": {
+          "line": 28,
+          "character": 239
+        }
+      }
+    },
+    {
+      "file": "teams/manifest.json",
+      "description": "We need to specify `groupchat` scope if we're planning to use the web part as meeting app",
+      "line": 32
+    },
+    {
+      "file": "teams/manifest.json",
+      "description": "And also correct `context` values: \n- `meetingChatTab` and `meetingDetailsTab` for pre- and post-meeting experiences, \n- `meetingSidePanel` and `meetingStage` for in-meeting experience",
+      "line": 40,
+      "selection": {
+        "start": {
+          "line": 37,
+          "character": 9
+        },
+        "end": {
+          "line": 40,
+          "character": 23
+        }
+      }
+    },
+    {
+      "file": "teams/manifest.json",
+      "description": "All other values are standard for SPFx solutions in MS Teams.",
+      "line": 67
+    }
+  ],
+  "ref": "master"
+}
