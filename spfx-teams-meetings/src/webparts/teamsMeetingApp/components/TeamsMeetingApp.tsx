@@ -186,33 +186,24 @@ export default class TeamsMeetingApp extends React.Component<ITeamsMeetingAppPro
       case 'personal':
         break;
       case 'meeting':
-        //const onlineMeetingId = atob(teamsContext.meetingId).replace('0#', '').replace('#0', '');
-        //const meetingInfo = await graphClient.api(`/me/onlineMeetings/${onlineMeetingId}`).version('v1.0').get();
-        const chatMessageInfo = await graphClient.api(`/chats/${teamsContext.chatId}/messages?$top=1`).version('v1.0').get();
 
-        // additionalInfo.push({
-        //   key: 'Join URL',
-        //   value: meetingInfo.joinWebUrl
-        // });
-        // additionalInfo.push({
-        //   key: 'Subject',
-        //   value: meetingInfo.subject
-        // });
-        // additionalInfo.push({
-        //   key: 'Organizer User Id',
-        //   value: meetingInfo.participants.organizer.identity.user.id
-        // });
+        const meetingChatInfo = await graphClient.api(`/chats/${teamsContext.chatId}`).version('beta').get();
 
-        if (chatMessageInfo.value && chatMessageInfo.value.length) {
-          const message = chatMessageInfo.value[0];
-          additionalInfo.push({
-            key: 'Chat Message From',
-            value: message.from.user.displayName
-          });
-          additionalInfo.push({
-            key: 'Chat Message',
-            value: message.body.content
-          });
+        if (meetingChatInfo && meetingChatInfo.onlineMeetingInfo) {
+          const meetingInfo = await graphClient.api(`/me/onlineMeetings?$filter=JoinWebUrl%20eq%20'${encodeURIComponent(meetingChatInfo.onlineMeetingInfo.joinWebUrl)}'`).version('v1.0').get();
+
+          if (meetingInfo && meetingInfo.value && meetingInfo.value.length > 0) {
+            const mInfo = meetingInfo.value[0];
+
+            additionalInfo.push({
+              key: 'Meeting Title',
+              value: mInfo.subject
+            });
+            additionalInfo.push({
+              key: 'Start Date & Time',
+              value: mInfo.startDateTime
+            });
+          }
         }
         break;
     }
