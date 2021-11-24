@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": false,
     "environment": "spo",
-    "version": "1.11.0",
+    "version": "1.13.1",
     "libraryName": "ui-connected-wp-demo",
     "libraryId": "b43ce154-c1b9-4a10-bf2c-40f19cb0a973",
     "packageManager": "npm",
