@@ -27,16 +27,16 @@ export default class PnPCarousel extends React.Component<IPnPCarouselProps, IPnP
     this.state = {};
   }
 
-  public componentDidMount() {
-    this.getImages(this.props);
+  public componentDidMount(): void {
+    this.getImages(this.props).then(() => { /* no-op; */ }).catch(() => { /* no-op; */ });
   }
 
-  public componentWillReceiveProps(nextProps: IPnPCarouselProps) {
+  public componentWillReceiveProps(nextProps: IPnPCarouselProps): void {
     //
     // we need to get images if listId or siteUrl have been changed
     //
     if (nextProps.listId !== this.props.listId || nextProps.siteUrl !== this.props.siteUrl) {
-      this.getImages(nextProps);
+      this.getImages(nextProps).then(() => { /* no-op; */ }).catch(() => { /* no-op; */ });
     }
   }
 
@@ -87,8 +87,8 @@ export default class PnPCarousel extends React.Component<IPnPCarouselProps, IPnP
         indicatorStyle={{
           backgroundColor: '#000'
         }}
-        onMoveNextClicked={() => {}}
-        onMovePrevClicked={() => {}}
+        onMoveNextClicked={() => { /* no-op; */ }}
+        onMovePrevClicked={() => { /* no-op; */ }}
         pauseOnHover={true}
          />;
     }
@@ -108,7 +108,7 @@ export default class PnPCarousel extends React.Component<IPnPCarouselProps, IPnP
     const images: ICarouselImage[] = [];
 
     if (jsonResponse.value && jsonResponse.value.length) {
-      jsonResponse.value.forEach(v => {
+      jsonResponse.value.forEach((v: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
         images.push({
           imageSrc: v.File.ServerRelativeUrl,
           title: v.Title,

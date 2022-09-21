@@ -13,6 +13,17 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "pnp-controls description"
+      },
+      "longDescription": {
+        "default": "pnp-controls description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
     }
   },
   "paths": {
