@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "rule-them-all-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/ruleThemAll/RuleThemAllWebPart.js",
+          "manifest": "./src/webparts/ruleThemAll/RuleThemAllWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "RuleThemAllWebPartStrings": "lib/webparts/ruleThemAll/loc/{locale}.js"
+  }
+}

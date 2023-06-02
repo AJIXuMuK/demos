@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.14.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.0-dev.166",
+    "libraryName": "rule-them-all",
+    "libraryId": "02271250-975d-4d6a-8084-83e71edcfa23",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "rule-them-all",
+    "solutionShortDescription": "rule-them-all description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

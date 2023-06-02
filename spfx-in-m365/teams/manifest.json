@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.14/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.14",
+  "version": "1.0.0",
+  "showLoadingIndicator": false,
+  "id": "c34cc09c-57c1-41d4-b41c-7a0733d32ecf",
+  "packageName": "RuleThemAllWebPart",
+  "developer": {
+    "name": "Alex Terentiev",
+    "websiteUrl": "https://aterentiev.com",
+    "privacyUrl": "https://aterentiev.com",
+    "termsOfUseUrl": "https://aterentiev.com"
+  },
+  "icons": {
+    "color": "c34cc09c-57c1-41d4-b41c-7a0733d32ecf_color.png",
+    "outline": "c34cc09c-57c1-41d4-b41c-7a0733d32ecf_outline.png"
+  },
+  "name": {
+    "short": "Rule Them All",
+    "full": "Rule Them All"
+  },
+  "description": {
+    "short": "Example short description",
+    "full": "Example full description"
+  },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+    {
+      "entityId": "100001",
+      "name": "Rule Them All",
+      "contentUrl": "https://a830edad9050849829e21083000.sharepoint.com/_layouts/15/TeamsLogon.aspx?SPFX=true&dest=/_layouts/15/teamshostedapp.aspx%3Fteams%26personal%26componentId=c34cc09c-57c1-41d4-b41c-7a0733d32ecf",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "permissions": [
+    "identity"
+  ],
+  "validDomains": [
+    "*.login.microsoftonline.com",
+    "*.sharepoint.com",
+    "resourceseng.blob.core.windows.net"
+  ],
+  "webApplicationInfo": {
+    "resource": "https://{teamSiteDomain}",
+    "id": "00000003-0000-0ff1-ce00-000000000000"
+  }
+}
