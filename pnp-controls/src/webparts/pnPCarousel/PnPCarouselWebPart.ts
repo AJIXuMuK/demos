@@ -62,7 +62,7 @@ export default class PnPCarouselWebPart extends BaseClientSideWebPart<IPnPCarous
               groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyFieldSitePicker('sites', {
-                  context: this.context,
+                  context: this.context as any, // eslint-disable-line @typescript-eslint/no-explicit-any
                   properties: this.properties,
                   label: 'Select Site',
                   onPropertyChange: this.onPropertyPaneFieldChanged,
@@ -71,7 +71,7 @@ export default class PnPCarouselWebPart extends BaseClientSideWebPart<IPnPCarous
                   key: 'sites'
                 }),
                 PropertyFieldListPicker('listId', {
-                  context: this.context,
+                  context: this.context as any, // eslint-disable-line @typescript-eslint/no-explicit-any
                   selectedList: this.properties.listId,
                   disabled: !this.properties.sites,
                   webAbsoluteUrl: this.properties.sites ? this.properties.sites[0].url : '',
