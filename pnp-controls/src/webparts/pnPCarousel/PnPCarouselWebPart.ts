@@ -1,16 +1,17 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
-import {
-  IPropertyPaneConfiguration
-} from '@microsoft/sp-property-pane';
+import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'PnPCarouselWebPartStrings';
 import PnPCarousel from './components/PnPCarousel';
 import { IPnPCarouselProps } from './components/IPnPCarouselProps';
 
-import { PropertyFieldSitePicker, IPropertyFieldSite } from '@pnp/spfx-property-controls/lib/PropertyFieldSitePicker';
+import {
+  PropertyFieldSitePicker,
+  IPropertyFieldSite,
+} from '@pnp/spfx-property-controls/lib/PropertyFieldSitePicker';
 import { PropertyFieldListPicker } from '@pnp/spfx-property-controls/lib/PropertyFieldListPicker';
 
 export interface IPnPCarouselWebPartProps {
@@ -20,22 +21,23 @@ export interface IPnPCarouselWebPartProps {
 }
 
 export default class PnPCarouselWebPart extends BaseClientSideWebPart<IPnPCarouselWebPartProps> {
-
   public render(): void {
     const element: React.ReactElement<IPnPCarouselProps> = React.createElement(
       PnPCarousel,
       {
-        siteUrl: this.properties.sites ? this.properties.sites[0].url : undefined,
+        siteUrl: this.properties.sites
+          ? this.properties.sites[0].url
+          : undefined,
         listId: this.properties.listId,
         title: this.properties.title,
         displayMode: this.displayMode,
         onConfigure: () => {
           this.context.propertyPane.open();
         },
-        updateTitle: title => {
+        updateTitle: (title) => {
           this.properties.title = title;
         },
-        spHttpClient: this.context.spHttpClient
+        spHttpClient: this.context.spHttpClient,
       }
     );
 
@@ -55,7 +57,7 @@ export default class PnPCarouselWebPart extends BaseClientSideWebPart<IPnPCarous
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: strings.PropertyPaneDescription,
           },
           groups: [
             {
@@ -68,24 +70,26 @@ export default class PnPCarouselWebPart extends BaseClientSideWebPart<IPnPCarous
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   multiSelect: false,
                   initialSites: this.properties.sites,
-                  key: 'sites'
+                  key: 'sites',
                 }),
                 PropertyFieldListPicker('listId', {
                   context: this.context as any, // eslint-disable-line @typescript-eslint/no-explicit-any
                   selectedList: this.properties.listId,
                   disabled: !this.properties.sites,
-                  webAbsoluteUrl: this.properties.sites ? this.properties.sites[0].url : '',
+                  webAbsoluteUrl: this.properties.sites
+                    ? this.properties.sites[0].url
+                    : '',
                   properties: this.properties,
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   key: 'listid',
                   baseTemplate: 101,
-                  label: 'Select document library'
-                })
-              ]
-            }
-          ]
-        }
-      ]
+                  label: 'Select document library',
+                }),
+              ],
+            },
+          ],
+        },
+      ],
     };
   }
 }

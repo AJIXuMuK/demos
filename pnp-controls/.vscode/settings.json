@@ -9,5 +9,10 @@
     "**/lib-amd": true,
     "src/**/*.scss.ts": true
   },
-  "typescript.tsdk": ".\\node_modules\\typescript\\lib"
+  "typescript.tsdk": ".\\node_modules\\typescript\\lib",
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "html.completion.attributeDefaultValue": "singlequotes",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single"
 }
