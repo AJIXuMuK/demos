@@ -2,12 +2,12 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "nodeVersion": "16.14.2",
+    "nodeVersion": "18.19.0",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.9.1"
+      "@microsoft/teams-js": "2.12.0"
     },
-    "version": "1.17.3",
+    "version": "1.19.0",
     "libraryName": "rule-them-all",
     "libraryId": "02271250-975d-4d6a-8084-83e71edcfa23",
     "environment": "spo",

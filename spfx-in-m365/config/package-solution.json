@@ -3,7 +3,7 @@
   "solution": {
     "name": "rule-them-all-client-side-solution",
     "id": "02271250-975d-4d6a-8084-83e71edcfa23",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "rule-them-all Feature",
         "description": "The feature that activates elements of the rule-them-all solution.",
         "id": "5fd264f7-f1cb-4cdc-9428-4331c7817572",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
