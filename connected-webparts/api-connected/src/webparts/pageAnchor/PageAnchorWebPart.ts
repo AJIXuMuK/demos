@@ -21,7 +21,9 @@ export default class PageAnchorWebPart extends BaseClientSideWebPart<IPageAnchor
   private _anchor: IAnchorItem;
 
   protected onInit(): Promise<void> {
-    this._anchor = {};
+    this._anchor = {
+      title: this.properties.title
+    };
     this.context.dynamicDataSourceManager.initializeSource(this);
     return Promise.resolve();
   }
@@ -33,6 +35,7 @@ export default class PageAnchorWebPart extends BaseClientSideWebPart<IPageAnchor
         displayMode: this.displayMode,
         title: this.properties.title,
         updateProperty: newTitle => {
+          this.properties.title = newTitle;
           this._anchor.title = newTitle;
           this.context.dynamicDataSourceManager.notifyPropertyChanged('anchor');
         }

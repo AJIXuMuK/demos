@@ -6,7 +6,41 @@
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
-    "isDomainIsolated": false
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "websiteUrl": "",
+      "mpnId": "Undefined-1.15.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "api-connected-wp-demo description"
+      },
+      "longDescription": {
+        "default": "api-connected-wp-demo description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "api-connected-wp-demo PageAnchorWebPart Feature",
+        "description": "The feature that activates PageAnchorWebPart from the api-connected-wp-demo solution.",
+        "id": "c2706392-32f0-4baa-aa74-c8d4afbd6a4c",
+        "version": "1.0.0.0",
+        "componentIds": ["c2706392-32f0-4baa-aa74-c8d4afbd6a4c"]
+      },
+      {
+        "title": "api-connected-wp-demo PageNavigationWebPart Feature",
+        "description": "The feature that activates PageNavigationWebPart from the api-connected-wp-demo solution.",
+        "id": "7b30473e-6565-4cda-a8dc-d79541edc80a",
+        "version": "1.0.0.0",
+        "componentIds": ["7b30473e-6565-4cda-a8dc-d79541edc80a"]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/api-connected-wp-demo.sppkg"

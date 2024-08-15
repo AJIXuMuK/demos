@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './PageAnchor.module.scss';
 import { IPageAnchorProps } from './IPageAnchorProps';
 import { DisplayMode } from '@microsoft/sp-core-library';
-import { css } from 'office-ui-fabric-react/lib/Utilities';
+import { css } from '@fluentui/react';
 import * as strings from 'PageAnchorWebPartStrings';
 
 export default class PageAnchor extends React.Component<IPageAnchorProps, {}> {

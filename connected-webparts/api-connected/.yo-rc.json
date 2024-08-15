@@ -2,11 +2,16 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": false,
     "environment": "spo",
-    "version": "1.11.0",
+    "version": "1.19.0",
     "libraryName": "api-connected-wp-demo",
     "libraryId": "fe458db2-89bd-45a6-bdcc-7669de980cd9",
     "packageManager": "npm",
     "isDomainIsolated": false,
-    "componentType": "webpart"
+    "componentType": "webpart",
+    "nodeVersion": "18.19.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.12.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }
