@@ -3,14 +3,14 @@
     "packageManager": "yarn",
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.17.3",
+    "version": "1.21.1",
     "libraryName": "pnp-controls",
     "libraryId": "d962ac1b-3cbb-44fa-86e5-49d5dcc034ed",
     "isDomainIsolated": false,
     "componentType": "webpart",
     "nodeVersion": "16.19.0",
     "sdkVersions": {
-      "@microsoft/teams-js": "2.9.1",
+      "@microsoft/teams-js": "2.24.0",
       "@microsoft/microsoft-graph-client": "3.0.2"
     }
   }
